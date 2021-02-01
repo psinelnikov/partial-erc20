@@ -34,16 +34,13 @@ contract Token {
     }
 
     function transfer(address recipient, uint256 amount) public {
-        require(msg.sender != address(0), "transfer from the zero address");
-        require(recipient != address(0), "transfer to the zero address");
+        require(_balances[msg.sender] >= amount, "You do not have enough tokens to send!");
 
         _balances[msg.sender] -= amount;
         _balances[recipient] += amount;
     }
 
     function _mint(address account, uint256 amount) private {
-        require(account != address(0), "mint to the zero address");
-
         _totalSupply += amount;
         _balances[account] += amount;
     }

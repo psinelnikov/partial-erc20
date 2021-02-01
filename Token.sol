@@ -17,15 +17,34 @@ contract Token {
         _name = name_;
         _symbol = symbol_;
         _decimals = 18;
+
+        _mint(originator_, 1000000);
     }
 
-    function name() public view returns (string memory) {}
+    function name() public view returns (string memory) {
+        return _name;
+    }
 
-    function symbol() public view returns (string memory) {}
+    function symbol() public view returns (string memory) {
+        return _symbol;
+    }
 
-    function balanceOf(address account) public view returns (uint256) {}
+    function balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
 
-    function transfer(address recipient, uint256 amount) public {}
+    function transfer(address recipient, uint256 amount) public {
+        require(msg.sender != address(0), "transfer from the zero address");
+        require(recipient != address(0), "transfer to the zero address");
 
-    function _mint(address account, uint256 amount) private {}
+        _balances[msg.sender] -= amount;
+        _balances[recipient] += amount;
+    }
+
+    function _mint(address account, uint256 amount) private {
+        require(account != address(0), "mint to the zero address");
+
+        _totalSupply += amount;
+        _balances[account] += amount;
+    }
 }

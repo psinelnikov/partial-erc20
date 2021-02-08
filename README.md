@@ -8,9 +8,10 @@ This repo is a starter template for the Solidity Workshop
 
 Before you begin...
 
-- Log into [Portis](https://wallet.portis.io)
-- Go to [Code Sandbox](https://codesandbox.io/s/test-dapp-yj3e6)
-- Open [Remix IDE](https://remix.ethereum.org/)
+- Open and Log into [Portis](https://wallet.portis.io)
+- Open [Code Sandbox](https://codesandbox.io/s/test-dapp-yj3e6)
+- Open [Remix IDE](https://remix.ethereum.org)
+- Open [Ganache Faucet](https://pavelsinelnikov.duckdns.org/faucet)
 
 ### Steps
 
@@ -82,7 +83,7 @@ this.setState({
 });
 ```
 
-You should be able to see the name and symbol of your Token, if you do not see your Address, click the `Activate Portis` button to authorize this Dapp.
+You should be able to see the name and symbol of your Token, if you do not see your Address, click the `Portis Menu` button to authorize this Dapp.
 
 #### Fueling the Smart Contract Transactions
 
@@ -99,4 +100,4 @@ You should be able to see the name and symbol of your Token, if you do not see y
 4. Paste the Account Address in the Receiver field
 5. You can set a different amount to be sent
 6. Click the `Send Transfer` button
-7. Accept the Transaction from Portis
+7. Accept the Transaction dialog from Portis
